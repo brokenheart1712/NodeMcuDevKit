@@ -1,0 +1,96 @@
+
+(rules PCB NodeMcuDevKitV1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 48)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.4)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 254.0)
+    (clear 254.2)
+    (clear 127.0 (type smd_to_turn_gap))
+    (clear 63.6 (type smd_smd))
+  )
+  (padstack "Via[0-1]_508:254_um"
+    (shape
+      (circle F.Cu 508.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 508.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_508:254_um" "Via[0-1]_508:254_um" default
+  )
+  (via 
+    "Via[0-1]_508:254_um-kicad_default" "Via[0-1]_508:254_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_508:254_um-Power" "Via[0-1]_508:254_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_508:254_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_508:254_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_508:254_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    /~RST~ "/ADC_EX" /ADC /GPIO10 /GPIO9 "/SPI_INT" "/SPI_MOSI" "/SPI_MISO"
+    "/SPI_CLK" /EN /GPIO16 /GPIO5 /GPIO4 /GPIO0 /GPIO2 /GPIO14
+    /GPIO12 /GPIO13 /GPIO15 /RXD0 /TXD0 /DTR /RTS "Net-(R8-Pad1)"
+    "Net-(R10-Pad2)" "Net-(R12-Pad2)" "/D_P" "/D_N" "Net-(D1-Pad2)" "Net-(Q1-Pad1)" "Net-(Q2-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    GND /VDD3V3 /VDDUSB /VDD5V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 508.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
