@@ -1,0 +1,790 @@
+EESchema Schematic File Version 4
+LIBS:NodeMcuDevKitV1-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "NodeMcuDevKitVer1.1"
+Date "2019-03-18"
+Rev "1.0"
+Comp "Diamond Electric Vietnam Company Limited"
+Comment1 "Created By Duc Dao Minh"
+Comment2 "https://github.com/nodemcu/nodemcu-devkit-v1.0"
+Comment3 "The repository of Version 1.0:"
+Comment4 "Designed with KiCad 5.0"
+$EndDescr
+Text Notes 3900 900  0    200  ~ 40
+NodeMCU Dev Kit Ver 1.1
+Wire Notes Line width 20
+	700  700  3100 700 
+Wire Notes Line width 20
+	3100 700  3100 5600
+Wire Notes Line width 20
+	3100 5600 700  5600
+Wire Notes Line width 20
+	700  5600 700  700 
+Text Notes 750  1050 0    200  ~ 40
+ESP-12E Core
+$Comp
+L Device:R R1
+U 1 1 5C8F46B3
+P 1250 1500
+F 0 "R1" V 1200 1350 50  0000 C CNN
+F 1 "12k" V 1200 1700 50  0000 C CNN
+F 2 "" V 1180 1500 50  0001 C CNN
+F 3 "~" H 1250 1500 50  0001 C CNN
+	1    1250 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5C8F473E
+P 1250 1700
+F 0 "R2" V 1200 1550 50  0000 C CNN
+F 1 "12k" V 1200 1900 50  0000 C CNN
+F 2 "" V 1180 1700 50  0001 C CNN
+F 3 "~" H 1250 1700 50  0001 C CNN
+	1    1250 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5C8F4768
+P 1250 1900
+F 0 "R3" V 1200 1750 50  0000 C CNN
+F 1 "12k" V 1200 2100 50  0000 C CNN
+F 2 "" V 1180 1900 50  0001 C CNN
+F 3 "~" H 1250 1900 50  0001 C CNN
+	1    1250 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5C8F478A
+P 1250 2100
+F 0 "R4" V 1200 1950 50  0000 C CNN
+F 1 "12k" V 1200 2300 50  0000 C CNN
+F 2 "" V 1180 2100 50  0001 C CNN
+F 3 "~" H 1250 2100 50  0001 C CNN
+	1    1250 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5C8F47AC
+P 1250 2300
+F 0 "R5" V 1200 2150 50  0000 C CNN
+F 1 "12k" V 1200 2500 50  0000 C CNN
+F 2 "" V 1180 2300 50  0001 C CNN
+F 3 "~" H 1250 2300 50  0001 C CNN
+	1    1250 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1100 2300 900  2300
+Wire Wire Line
+	900  2300 900  2500
+Wire Wire Line
+	1400 2300 1900 2300
+$Comp
+L Device:C C1
+U 1 1 5C8F48F3
+P 2100 2250
+F 0 "C1" H 2150 2350 50  0000 L CNN
+F 1 "100nF" H 2150 2150 50  0000 L CNN
+F 2 "" H 2138 2100 50  0001 C CNN
+F 3 "~" H 2100 2250 50  0001 C CNN
+	1    2100 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 2100 2100 2100
+Wire Wire Line
+	2100 2400 2100 2500
+Wire Wire Line
+	900  1300 900  1500
+Wire Wire Line
+	900  2100 1100 2100
+Wire Wire Line
+	1100 1900 900  1900
+Connection ~ 900  1900
+Wire Wire Line
+	900  1900 900  2100
+Wire Wire Line
+	1100 1700 900  1700
+Connection ~ 900  1700
+Wire Wire Line
+	900  1700 900  1900
+Wire Wire Line
+	1100 1500 900  1500
+Connection ~ 900  1500
+Wire Wire Line
+	900  1500 900  1700
+Wire Wire Line
+	1400 1500 1900 1500
+Wire Wire Line
+	1400 1700 1900 1700
+Wire Wire Line
+	1400 1900 1900 1900
+Text Label 1900 1500 2    50   ~ 0
+GPIO0
+Text Label 1900 1700 2    50   ~ 0
+GPIO2
+Text Label 1900 1900 2    50   ~ 0
+EN
+Text Label 1750 2100 0    50   ~ 0
+~RST~
+Text Label 1900 2300 2    50   ~ 0
+GPIO15
+Text Notes 900  3400 0    50   ~ 0
+MATTERS NEEDING ATTENTION \nOn every boot/reset/wakeup, \nGPIO15 MUST keep LOW, GPIO2 MUST keep HIGH. \nGPIO0 HIGH -> RUN MODE, LOW -> FLASH MODE.\nWhen you need to use the sleep mode, \nGPIO16 and RST should be connected,\nand GPIO16 will output LOW to reset the system\nat the time of wakeup.
+$Comp
+L Device:CP1 C2
+U 1 1 5C8F5ABF
+P 2700 1900
+F 0 "C2" H 2750 2000 50  0000 L CNN
+F 1 "100uF" H 2600 1800 50  0000 L CNN
+F 2 "" H 2700 1900 50  0001 C CNN
+F 3 "~" H 2700 1900 50  0001 C CNN
+	1    2700 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 2050 2700 2500
+Wire Wire Line
+	1200 3950 800  3950
+Wire Wire Line
+	1200 4150 800  4150
+Wire Wire Line
+	1200 4050 800  4050
+Wire Wire Line
+	1200 4550 800  4550
+Wire Wire Line
+	1200 4750 800  4750
+Wire Wire Line
+	1200 4850 800  4850
+Wire Wire Line
+	1200 4950 800  4950
+Wire Wire Line
+	2600 4950 3000 4950
+Wire Wire Line
+	2600 4850 3000 4850
+Wire Wire Line
+	2600 4750 3000 4750
+Wire Wire Line
+	2600 4550 3000 4550
+Wire Wire Line
+	2600 4450 3000 4450
+Wire Wire Line
+	2600 4350 3000 4350
+Wire Wire Line
+	2600 4250 3000 4250
+Wire Wire Line
+	2600 4150 3000 4150
+Wire Wire Line
+	2600 4050 3000 4050
+Wire Wire Line
+	2600 3950 3000 3950
+Text Label 800  3950 0    50   ~ 0
+~RST~
+Text Label 800  4150 0    50   ~ 0
+EN
+Text Label 800  4050 0    50   ~ 0
+ADC
+Text Label 800  4250 0    50   ~ 0
+GPIO16
+Text Label 2700 4550 0    50   ~ 0
+GPIO15
+Text Label 2700 4750 0    50   ~ 0
+SPI_CLK
+Text Label 800  4850 0    50   ~ 0
+SPI_MISO
+Text Label 2800 3950 0    50   ~ 0
+TXD0
+Text Label 2800 4050 0    50   ~ 0
+RXD0
+Text Label 800  4750 0    50   ~ 0
+SPI_MOSI
+Text Label 800  4950 0    50   ~ 0
+GPIO9
+Text Label 2700 4950 0    50   ~ 0
+GPIO10
+Text Label 2700 4850 0    50   ~ 0
+SPI_INT
+Text Label 2750 4350 0    50   ~ 0
+GPIO0
+Text Label 2750 4450 0    50   ~ 0
+GPIO2
+Text Label 2750 4250 0    50   ~ 0
+GPIO4
+Text Label 2750 4150 0    50   ~ 0
+GPIO5
+Text Label 800  4450 0    50   ~ 0
+GPIO12
+Text Label 800  4550 0    50   ~ 0
+GPIO13
+Text Label 800  4350 0    50   ~ 0
+GPIO14
+Wire Notes Line width 20
+	3300 1100 5700 1100
+Wire Notes Line width 20
+	5700 1100 5700 5600
+Wire Notes Line width 20
+	5700 5600 3300 5600
+Wire Notes Line width 20
+	3300 5600 3300 1100
+Text Notes 3350 1450 0    200  ~ 40
+USB to UART
+Text Notes 3500 2150 0    50   ~ 0
+AUTO PROGRAM CIRCUIT\n DTR RTS RST GPIO0\n   1   1   1    1\n   0   0   1    1\n   1   0   0    1\n   0   1   1    0   
+$Comp
+L MCU_Espressif:ESP-12E U1
+U 1 1 5C9106F4
+P 1900 4450
+F 0 "U1" H 1900 4750 50  0000 C CNN
+F 1 "ESP-12E" H 1900 4650 50  0000 C CNN
+F 2 "" H 1900 4450 50  0001 C CNN
+F 3 "" H 1900 4450 50  0001 C CNN
+	1    1900 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	800  4450 1200 4450
+Wire Wire Line
+	1200 4350 800  4350
+Wire Wire Line
+	800  4250 1200 4250
+$Comp
+L Interface_USB:CP2102 U2
+U 1 1 5C9207EE
+P 5000 3100
+F 0 "U2" H 5000 3400 50  0000 C CNN
+F 1 "CP2102" H 5000 3300 50  0000 C CNN
+F 2 "" H 4500 2400 50  0001 C CNN
+F 3 "" H 4500 2400 50  0001 C CNN
+	1    5000 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 4000 4900 4100
+Wire Wire Line
+	5100 4100 5100 4000
+Wire Wire Line
+	4500 2400 4100 2400
+Wire Wire Line
+	4500 2500 4100 2500
+Wire Wire Line
+	4500 2600 4100 2600
+Wire Wire Line
+	4500 2700 4100 2700
+NoConn ~ 4500 2900
+Wire Wire Line
+	4500 3100 4100 3100
+NoConn ~ 4500 3200
+Wire Wire Line
+	4100 3300 4500 3300
+Wire Wire Line
+	4100 3400 4500 3400
+Wire Wire Line
+	4100 3500 4500 3500
+Wire Wire Line
+	4500 3600 4100 3600
+Wire Wire Line
+	4100 3700 4500 3700
+Wire Wire Line
+	4500 3800 4100 3800
+$Comp
+L Device:C C5
+U 1 1 5C932ED0
+P 5150 1700
+F 0 "C5" V 5100 1550 50  0000 L CNN
+F 1 "10uF" V 5000 1600 50  0000 L CNN
+F 2 "" H 5188 1550 50  0001 C CNN
+F 3 "~" H 5150 1700 50  0001 C CNN
+	1    5150 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5C9487AF
+P 3500 2850
+F 0 "C3" H 3500 2750 50  0000 L CNN
+F 1 "10uF" H 3425 2950 50  0000 L CNN
+F 2 "" H 3538 2700 50  0001 C CNN
+F 3 "~" H 3500 2850 50  0001 C CNN
+	1    3500 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5C9487B6
+P 3700 2850
+F 0 "C4" H 3750 2750 50  0000 C CNN
+F 1 "100nF" H 3675 2950 50  0000 C CNN
+F 2 "" H 3738 2700 50  0001 C CNN
+F 3 "~" H 3700 2850 50  0001 C CNN
+	1    3700 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3500 3000 3500 3100
+Wire Wire Line
+	3500 3100 3700 3100
+Wire Wire Line
+	3700 3100 3700 3000
+Connection ~ 3500 3100
+Wire Wire Line
+	3500 3100 3500 3300
+Wire Wire Line
+	3700 2700 3700 2600
+Wire Wire Line
+	3700 2600 3500 2600
+Wire Wire Line
+	3500 2600 3500 2700
+Wire Wire Line
+	3500 2300 3500 2600
+Connection ~ 3500 2600
+Text Label 3500 2600 1    50   ~ 0
+VDDUSB
+Wire Wire Line
+	5100 2200 5100 2100
+Wire Wire Line
+	5100 2100 4900 2100
+Connection ~ 4900 2100
+Wire Wire Line
+	4900 2100 4900 2200
+Text Label 4100 2400 0    50   ~ 0
+DCD
+Text Label 4100 2500 0    50   ~ 0
+RI
+Text Label 4100 2600 0    50   ~ 0
+D_P
+Text Label 4100 2700 0    50   ~ 0
+D_N
+Wire Wire Line
+	4500 2800 3900 2800
+Wire Wire Line
+	3900 2800 3900 2600
+Wire Wire Line
+	3900 2600 3700 2600
+Connection ~ 3700 2600
+Text Label 4100 3100 0    50   ~ 0
+ACTIVE
+Text Label 4100 3300 0    50   ~ 0
+CTS
+Text Label 4100 3400 0    50   ~ 0
+RTS
+Text Label 4100 3500 0    50   ~ 0
+TXD0
+$Comp
+L Device:R R8
+U 1 1 5C94802F
+P 3950 3600
+F 0 "R8" V 3900 3450 50  0000 C CNN
+F 1 "470" V 3900 3800 50  0000 C CNN
+F 2 "" V 3880 3600 50  0001 C CNN
+F 3 "~" H 3950 3600 50  0001 C CNN
+	1    3950 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3800 3600 3500 3600
+Text Label 3500 3600 0    50   ~ 0
+RXD0
+Text Label 4100 3700 0    50   ~ 0
+DSR
+Text Label 4100 3800 0    50   ~ 0
+DTR
+$Comp
+L Device:C C6
+U 1 1 5C932F12
+P 5150 1900
+F 0 "C6" V 5200 2000 50  0000 C CNN
+F 1 "100nF" V 5000 1900 50  0000 C CNN
+F 2 "" H 5188 1750 50  0001 C CNN
+F 3 "~" H 5150 1900 50  0001 C CNN
+	1    5150 1900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4600 1700 4900 1700
+Wire Wire Line
+	4900 1700 4900 1900
+Wire Wire Line
+	5000 1900 4900 1900
+Connection ~ 4900 1900
+Wire Wire Line
+	4900 1900 4900 2100
+Wire Wire Line
+	4900 1700 5000 1700
+Connection ~ 4900 1700
+Wire Wire Line
+	5300 1700 5400 1700
+Wire Wire Line
+	5400 1700 5400 1900
+Wire Wire Line
+	5300 1900 5400 1900
+$Comp
+L Transistor_BJT:S8050 Q1
+U 1 1 5C9663A2
+P 3600 4100
+F 0 "Q1" H 3525 3875 50  0000 L CNN
+F 1 "S8050" H 3375 3950 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3800 4025 50  0001 L CIN
+F 3 "http://www.unisonic.com.tw/datasheet/S8050.pdf" H 3600 4100 50  0001 L CNN
+	1    3600 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:S8050 Q2
+U 1 1 5C966643
+P 3600 5200
+F 0 "Q2" H 3525 4975 50  0000 L CNN
+F 1 "S8050" H 3375 5050 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3800 5125 50  0001 L CIN
+F 3 "http://www.unisonic.com.tw/datasheet/S8050.pdf" H 3600 5200 50  0001 L CNN
+	1    3600 5200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5C96BB04
+P 3900 4350
+F 0 "R6" H 3825 4200 50  0000 C CNN
+F 1 "12k" H 3775 4350 50  0000 C CNN
+F 2 "" V 3830 4350 50  0001 C CNN
+F 3 "~" H 3900 4350 50  0001 C CNN
+	1    3900 4350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5C96BB9E
+P 3900 4950
+F 0 "R7" H 3825 4800 50  0000 C CNN
+F 1 "12k" H 3775 4950 50  0000 C CNN
+F 2 "" V 3830 4950 50  0001 C CNN
+F 3 "~" H 3900 4950 50  0001 C CNN
+	1    3900 4950
+	-1   0    0    1   
+$EndComp
+Text Label 4050 4100 0    50   ~ 0
+DTR
+Text Label 4050 5200 0    50   ~ 0
+RTS
+Text Label 3500 3800 0    50   ~ 0
+~RST~
+Text Label 3500 5500 0    50   ~ 0
+GPIO0
+Wire Wire Line
+	3500 3900 3500 3800
+Wire Wire Line
+	3800 4100 3900 4100
+Wire Wire Line
+	3900 4100 3900 4200
+Wire Wire Line
+	3900 4600 3500 4600
+Wire Wire Line
+	3500 4600 3500 5000
+Wire Wire Line
+	3900 4500 3900 4600
+Wire Wire Line
+	3500 4300 3500 4500
+Wire Wire Line
+	3500 4500 3700 4500
+Wire Wire Line
+	3700 4500 3700 4700
+Wire Wire Line
+	3700 4700 3900 4700
+Wire Wire Line
+	3900 4700 3900 4800
+Connection ~ 3900 4100
+Wire Wire Line
+	3900 4100 4200 4100
+Wire Wire Line
+	3800 5200 3900 5200
+Wire Wire Line
+	3500 5400 3500 5500
+Wire Wire Line
+	3900 5100 3900 5200
+Connection ~ 3900 5200
+Wire Wire Line
+	3900 5200 4200 5200
+Wire Wire Line
+	4900 4100 5100 4100
+Wire Wire Line
+	5100 4100 5350 4100
+Connection ~ 5100 4100
+$Comp
+L Connector:USB_Micro_5S_B U4
+U 1 1 5C9EC4CC
+P 5000 4800
+F 0 "U4" H 5000 5263 50  0000 C CNN
+F 1 "USB_Micro_5S_B" H 5000 5173 50  0000 C CNN
+F 2 "" H 4900 4800 50  0001 C CNN
+F 3 "" H 4900 4800 50  0001 C CNN
+	1    5000 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 4600 5500 4600
+Wire Wire Line
+	5500 4600 5500 4700
+Wire Wire Line
+	5400 4700 5500 4700
+Connection ~ 5500 4700
+Wire Wire Line
+	5500 4700 5500 4900
+Wire Wire Line
+	5400 4900 5500 4900
+Connection ~ 5500 4900
+Wire Wire Line
+	5500 4900 5500 5000
+Wire Wire Line
+	5400 5000 5500 5000
+Connection ~ 5500 5000
+Wire Wire Line
+	4600 5000 4500 5000
+Wire Wire Line
+	4600 4700 4300 4700
+Wire Wire Line
+	4600 4800 4300 4800
+Wire Wire Line
+	4600 4900 4300 4900
+Wire Wire Line
+	4600 4600 4500 4600
+Wire Wire Line
+	4500 4600 4500 4200
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5CA065C9
+P 4500 4200
+F 0 "#FLG0101" H 4500 4275 50  0001 C CNN
+F 1 "PWR_FLAG" H 4500 4350 50  0001 C CNN
+F 2 "" H 4500 4200 50  0001 C CNN
+F 3 "~" H 4500 4200 50  0001 C CNN
+	1    4500 4200
+	1    0    0    -1  
+$EndComp
+Text Label 4500 4550 1    50   ~ 0
+VDDUSB
+Text Label 4300 4700 0    50   ~ 0
+D_N
+Text Label 4300 4800 0    50   ~ 0
+D_P
+Text Label 4300 4900 0    50   ~ 0
+OTG_ID
+$Comp
+L Regulator_Linear:NCP1117-3.3_SOT223 U3
+U 1 1 5CA0CD16
+P 1900 6500
+F 0 "U3" H 1900 6740 50  0000 C CNN
+F 1 "NCP1117-3.3_SOT223" H 1900 6650 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 1900 6700 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub_link/Collateral/NCP1117-D.PDF" H 2000 6250 50  0001 C CNN
+	1    1900 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N5819 D1
+U 1 1 5CA0CFCD
+P 1900 7300
+F 0 "D1" H 1900 7200 50  0000 C CNN
+F 1 "1N5819" H 1900 7425 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 1900 7125 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 1900 7300 50  0001 C CNN
+	1    1900 7300
+	-1   0    0    1   
+$EndComp
+Wire Notes Line width 20
+	700  5800 3100 5800
+Wire Notes Line width 20
+	3100 5850 3100 7600
+Wire Notes Line width 20
+	700  7600 700  5800
+Text Notes 1400 6150 0    200  ~ 40
+Power
+Wire Notes Line width 20
+	700  7600 3100 7600
+$Comp
+L Device:C C7
+U 1 1 5CA4032E
+P 1400 6750
+F 0 "C7" H 1275 6850 50  0000 L CNN
+F 1 "10uF 25V" H 1200 6650 50  0000 L CNN
+F 2 "" H 1438 6600 50  0001 C CNN
+F 3 "~" H 1400 6750 50  0001 C CNN
+	1    1400 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 5CA40824
+P 3500 3300
+F 0 "#FLG0102" H 3500 3375 50  0001 C CNN
+F 1 "PWR_FLAG" H 3400 3450 50  0001 C CNN
+F 2 "" H 3500 3300 50  0001 C CNN
+F 3 "~" H 3500 3300 50  0001 C CNN
+	1    3500 3300
+	-1   0    0    1   
+$EndComp
+Text Label 3500 3300 1    50   ~ 0
+GND
+Text Label 900  2500 1    50   ~ 0
+GND
+Text Label 2100 2500 1    50   ~ 0
+GND
+Text Label 2700 2500 1    50   ~ 0
+GND
+Text Label 900  1300 3    50   ~ 0
+VDD3V3
+Wire Wire Line
+	2700 1300 2700 1750
+Text Label 2700 1300 3    50   ~ 0
+VDD3V3
+Text Label 1900 5350 1    50   ~ 0
+GND
+Text Label 1900 3750 1    50   ~ 0
+VDD3V3
+Wire Wire Line
+	1900 5150 1900 5350
+Wire Wire Line
+	4500 5000 4500 5300
+Wire Wire Line
+	5500 5000 5500 5300
+Text Label 4500 5250 1    50   ~ 0
+GND
+Text Label 5500 5250 1    50   ~ 0
+GND
+Text Label 4600 1700 0    50   ~ 0
+VDD3V3
+Wire Wire Line
+	5400 2100 5400 1900
+Connection ~ 5400 1900
+Text Label 5400 2100 1    50   ~ 0
+GND
+Text Label 5150 4100 0    50   ~ 0
+GND
+Wire Wire Line
+	900  6500 1400 6500
+Wire Wire Line
+	1400 6600 1400 6500
+Connection ~ 1400 6500
+Wire Wire Line
+	1400 6500 1600 6500
+$Comp
+L Device:C C8
+U 1 1 5CA9942B
+P 2400 6750
+F 0 "C8" H 2275 6850 50  0000 L CNN
+F 1 "10uF" H 2200 6675 50  0000 L CNN
+F 2 "" H 2438 6600 50  0001 C CNN
+F 3 "~" H 2400 6750 50  0001 C CNN
+	1    2400 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 6600 2400 6500
+Wire Wire Line
+	1400 6900 1400 7000
+Wire Wire Line
+	1400 7000 1900 7000
+Wire Wire Line
+	2400 7000 2400 6900
+Wire Wire Line
+	1900 6800 1900 7000
+Connection ~ 1900 7000
+Wire Wire Line
+	1900 7000 2400 7000
+Wire Wire Line
+	2400 7000 2800 7000
+Connection ~ 2400 7000
+Text Label 900  6500 0    50   ~ 0
+VDD5V
+Wire Wire Line
+	2400 6500 2900 6500
+Text Label 2900 6500 2    50   ~ 0
+VDD3V3
+Text Label 2600 7000 0    50   ~ 0
+GND
+Wire Wire Line
+	2200 6500 2400 6500
+Connection ~ 2400 6500
+$Comp
+L power:GND #PWR0101
+U 1 1 5CAD12E3
+P 1900 5350
+F 0 "#PWR0101" H 1900 5100 50  0001 C CNN
+F 1 "GND" H 1904 5178 50  0001 C CNN
+F 2 "" H 1900 5350 50  0001 C CNN
+F 3 "" H 1900 5350 50  0001 C CNN
+	1    1900 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5CAD1A44
+P 5400 2100
+F 0 "#PWR0102" H 5400 1850 50  0001 C CNN
+F 1 "GND" H 5404 1928 50  0001 C CNN
+F 2 "" H 5400 2100 50  0001 C CNN
+F 3 "" H 5400 2100 50  0001 C CNN
+	1    5400 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5CAD1EE4
+P 5350 4100
+F 0 "#PWR0103" H 5350 3850 50  0001 C CNN
+F 1 "GND" H 5354 3928 50  0001 C CNN
+F 2 "" H 5350 4100 50  0001 C CNN
+F 3 "" H 5350 4100 50  0001 C CNN
+	1    5350 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5CAD1FD5
+P 4500 5300
+F 0 "#PWR0104" H 4500 5050 50  0001 C CNN
+F 1 "GND" H 4504 5128 50  0001 C CNN
+F 2 "" H 4500 5300 50  0001 C CNN
+F 3 "" H 4500 5300 50  0001 C CNN
+	1    4500 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5CAD21B7
+P 2800 7000
+F 0 "#PWR0105" H 2800 6750 50  0001 C CNN
+F 1 "GND" H 2804 6828 50  0001 C CNN
+F 2 "" H 2800 7000 50  0001 C CNN
+F 3 "" H 2800 7000 50  0001 C CNN
+	1    2800 7000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5CAD210B
+P 5500 5300
+F 0 "#PWR0106" H 5500 5050 50  0001 C CNN
+F 1 "GND" H 5504 5128 50  0001 C CNN
+F 2 "" H 5500 5300 50  0001 C CNN
+F 3 "" H 5500 5300 50  0001 C CNN
+	1    5500 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 3400 1900 3750
+Wire Wire Line
+	1750 7300 900  7300
+Wire Wire Line
+	2050 7300 2900 7300
+Text Label 900  7300 0    50   ~ 0
+VDDUSB
+Text Label 2900 7300 2    50   ~ 0
+VDD5V
+$EndSCHEMATC
